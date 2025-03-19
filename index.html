@@ -44,7 +44,7 @@
   <!-- Intro Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <h2>Plan Your Next Surf Adventure</h2>
+      <h2><span class="text-blue">P</span>lan Your Next Surf Adventure</h2>
       <p>Find the best surf spots based on your preferences.</p>
       <a href="#features" class="cta-btn">Get Started</a>
     </div>
@@ -52,38 +52,53 @@
 
   <!-- Feature Section -->
   <section id="features" class="features">
-    <h2>Key Features</h2>
+    <h2><span class="text-blue">K</span>ey Features</h2>
     <div class="feature-list">
       <!-- Feature 1 -->
       <div class="feature-item">
-        <h3>Destination Finder</h3>
-        <p>Discover the best surf locations tailored to your preferences and traveling date.</p>
-        <img src="images/Filter-Destinations.png" alt="Surf Destinations" />
+        <div class="feature-header">
+          <h3>Destination Finder</h3>
+        </div>
+        <div class="feature-body">
+          <p>Discover the best surf locations tailored to your preferences and traveling date.</p>
+        </div class="feature-image">
+          <img src="images/Filter-SurfZones.png" alt="Surf Destinations" />
+        <div></div>
         </div>
       <!-- Feature 2 -->
       <div class="feature-item">
-        <h3>Weather Forecast</h3>
-        <p>Check the latest weather, swell and wind conditions.</p>
-        <img src="images/Surf-Forecast.png" alt="Weather Forecast" />
+        <div class="feature-header">
+          <h3>Weather Forecast</h3>
+        </div>
+        <div class="feature-body">
+          <p>Check the latest weather, swell and wind conditions.</p>
+        </div>
+        <div class="feature-image">
+          <img src="images/Forecast.png" alt="Weather Forecast" />
+        </div>
       </div>
       <!-- Feature 3 -->
       <div class="feature-item">
-        <h3>Spot Finder</h3>
-        <p>Filter the spots to find the ones that match your skills and desires.</p>
-        <img src="images/Filter-Spots.png" alt="Filter spots" />
+        <div class="feature-header">
+          <h3>Spot Finder</h3>
+        </div>
+        <div class="feature-body">
+          <p>Filter the spots to find the ones that match your skills and preferences.</p>
+        </div>
+        <div class="feature-image">
+          <img src="images/Filter-Spots.png" alt="Filter spots" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Demo Section -->
   <section id="demo" class="demo">
-    <h2>Demo Video</h2>
+    <h2><span class="text-blue">D</span>emo Video</h2>
     <p>See SurfQuest in action!</p>
     <div class="video-container">
       <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/watch?v=R_MfTsBy-BY" 
+        src="https://www.youtube.com/embed/R_MfTsBy-BY?modestbranding=1&showinfo=0&rel=0"
         title="SurfQuest Demo"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -94,11 +109,10 @@
 
   <!-- About Section -->
   <section id="about" class="about">
-    <h2>About <span class="text-white">Surf</span><span class="text-blue">Q</span><span class="text-white">uest</span></h2>
+    <h2><span class="text-white">A</span>bout <span class="text-white">Surf</span><span class="text-blue">Q</span><span class="text-white">uest</span></h2>
     <p>
-      <p>Inspired by the love for surfing, SurfQuest was built to help surfers find the perfect destination for their specific desires</p>
-      <p>With SurfQuest, plann your next surftrip in just a couple of clicks!</p>
-      <p> Developed as a portfolio project for Holberton School.</p>
+      <p>Inspired by the love for surfing, SurfQuest was built to help surfers find the perfect surfing destination they dream about...</p>
+      <p><span class="text-blue">(Developed as a portfolio project for Holberton School by Cédric Tobie)</span></p>
     </p>
     <div class="social-links">
       <a href="https://github.com/HolbieWan" target="_blank">GitHub</a>
@@ -108,16 +122,23 @@
 
   <script>
     const sections = document.querySelectorAll('section');
-    const options = { threshold: 1 };
+    
+    // Trigger intersection around halfway in the viewport
+    const options = { threshold: 0.6 }; 
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Fade in
           entry.target.classList.add('visible');
+        } else {
+          // Fade out
+          entry.target.classList.remove('visible');
         }
       });
     }, options);
     
-  sections.forEach(sec => observer.observe(sec));
+    sections.forEach(sec => observer.observe(sec));
   </script>
 
   <!-- Footer -->

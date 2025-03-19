@@ -2,17 +2,12 @@
   FONTS & RESETS
 ****************************************************/
 
-/* Use 'Permanent Marker' for base text & 
-   'Grechen Fuemen' for the banner title. */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* We'll default to Permanent Marker for everything,
-   then override the banner's main text with Grechen Fuemen. */
 body {
   background-color: #000;
   color: #fff;
@@ -47,12 +42,15 @@ html {
   text-decoration: none;
 }
 
-/* Blue color from Tailwind blue-500 */
 .text-blue {
   color: #3b82f6;
 }
 .text-white {
   color: white;
+}
+
+.text-gray {
+  color: gray;
 }
 
 /* Nav links */
@@ -95,7 +93,7 @@ html {
   position: relative;
   width: 100%;
   height: 300px;
-  margin-top: 65px; /* so content is not under the navbar */
+  margin-top: 65px;
   overflow: hidden;
 }
 .banner-img {
@@ -178,11 +176,11 @@ html {
   FEATURES SECTION
 ****************************************************/
 .features {
-  min-height: 100vh;     /* Keep full-screen section */
-  display: flex;         /* Use flex layout to align and center content */
+  min-height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;    /* Some padding around content */
+  padding: 50px 20px;
   box-sizing: border-box;
 }
 
@@ -192,34 +190,33 @@ html {
 }
 
 .feature-list {
-  display: flex;         /* Lay out cards side by side */
-  gap: 20px;             /* Space between cards */
-  width: 100%;           /* Let it expand full width */
-  max-width: 1200px;     /* Optional: limit overall width */
-  height: 100%;           /* Cards fill 80% of the section’s height */
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
   box-sizing: border-box;
 }
 
 .feature-item {
-  flex: 1;               /* Each card takes equal available width */
-  display: flex;         /* So we can center content inside */
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   padding: 20px;
   background: #1f2937;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
   text-align: center;
-  /* Adjust min-width & margin if needed */
   min-width: 250px;
-  min-height: 500px;
+  min-height: 450px;
 }
 
 .feature-item img {
-  width: 94%;            /* Slightly smaller than full card width */
+  width: 94%;
   margin: 10px auto 15px auto; 
   border-radius: 20px;
-  max-height: 60%;       /* Keep some space for text if you want */
+  max-height: 60%;
 }
 
 .feature-item h3 {
@@ -229,26 +226,51 @@ html {
 
 .feature-item p {
   margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.feature-header h3 {
+  margin: 0 0 10px 0;
+  font-size: 36px;
+}
+
+.feature-body {
+  margin-bottom: auto; 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.feature-body p {
+  margin: 40px 0 10px 0;
+}
+
+.feature-image img {
+  width: 90%;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 /***************************************************
   DEMO SECTION
 ****************************************************/
+iframe {
+  width: 100%;
+  height: auto;
+}
+
 .demo {
-  /* Make it fill the screen like the others */
   min-height: 100vh;            
   display: flex;                
   flex-direction: column;       
   justify-content: center;      
   align-items: center;
   
-  /* Add padding if needed */
   padding: 50px 20px;
   box-sizing: border-box;
   
-  /* Fade-in default state */
   opacity: 0;
-  /* We'll add a slight delay so it fades in after 0.3s */
   transition: opacity 1s ease 0.3s;
 }
 
@@ -269,10 +291,11 @@ html {
 }
 
 .video-container iframe,
+
 .video-container video {
   width: 100%;
   height: auto;
-  max-height: 450px; /* or whatever fits your design */
+  max-height: 8000px;
   border-radius: 8px;
 }
 
@@ -293,7 +316,7 @@ section.visible {
 }
 .about p {
   max-width: 700px;
-  margin: 0 auto 20px auto;
+  margin: 10px auto 10px auto;
   line-height: 1;
   font-size: 20px;
 }
@@ -301,7 +324,7 @@ section.visible {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .social-links a {
   color: #3b82f6;
