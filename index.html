@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SurfQuest - Surf Trip Planner</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Permanent+Marker&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div>Test</div>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <span class="text-white">Surf</span><span class="text-blue">Q</span><span class="text-white">uest</span>
+    </a>
+    <div class="nav-links">
+      <a href="#hero">Presentation</a>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <header class="banner">
+    <img src="banner.jpg" alt="SurfQuest Banner" class="banner-img" />
+    <div class="banner-content">
+      <h1 class="banner-title">
+        <span class="text-white">Surf</span><span class="text-blue">Q</span><span class="text-white">uest</span>
+      </h1>
+      <p class="banner-subtitle">SURF TRIP PLANNER</p>
+      <a href="https://your-surfquest-app-url.com" class="cta-btn">Explore Now</a>
+    </div>
+  </header>
+
+  <!-- Intro Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h2>Plan Your Next Surf Adventure</h2>
+      <p>Find the best surf spots based on your preferences.</p>
+      <a href="#features" class="cta-btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section id="features" class="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+      <!-- Feature 1 -->
+      <div class="feature-item">
+        <h3>Destination Finder</h3>
+        <p>Discover the best surf locations tailored to your preferences and traveling date.</p>
+        <img src="images/Filter-Destinations.png" alt="Surf Destinations" />
+        </div>
+      <!-- Feature 2 -->
+      <div class="feature-item">
+        <h3>Weather Forecast</h3>
+        <p>Check the latest weather, swell and wind conditions.</p>
+        <img src="images/Surf-Forecast.png" alt="Weather Forecast" />
+      </div>
+      <!-- Feature 3 -->
+      <div class="feature-item">
+        <h3>Spot Finder</h3>
+        <p>Filter the spots to find the ones that match your skills and desires.</p>
+        <img src="images/Filter-Spots.png" alt="Filter spots" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section id="demo" class="demo">
+    <h2>Demo Video</h2>
+    <p>See SurfQuest in action!</p>
+    <div class="video-container">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/watch?v=R_MfTsBy-BY" 
+        title="SurfQuest Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About <span class="text-white">Surf</span><span class="text-blue">Q</span><span class="text-white">uest</span></h2>
+    <p>
+      <p>Inspired by the love for surfing, SurfQuest was built to help surfers find the perfect destination for their specific desires</p>
+      <p>With SurfQuest, plann your next surftrip in just a couple of clicks!</p>
+      <p> Developed as a portfolio project for Holberton School.</p>
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/HolbieWan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/cedric-tobie" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+    
+  sections.forEach(sec => observer.observe(sec));
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © 2025 SurfQuest. All Rights Reserved.
+      <a href="https://github.com/HolbieWan/surfquest">View on GitHub</a>
+    </p>
+  </footer>
+
 </body>
 </html>
